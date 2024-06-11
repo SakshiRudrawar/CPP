@@ -1,31 +1,68 @@
-#include <stdio.h>
-int main() 
+#include<stdio.h>
+int married(int&, int&, char&);
+
+int main()
 {
-    int maleage, femaleage;
-
-    printf("Enter the age of the male: ");
-    scanf("%d", &maleage);
-
-    printf("Enter the age of the female: ");
-    scanf("%d", &femaleage);
-
-    if (maleage >= 21 && femaleage >= 18) 
+	int Age,num;
+	char gender;
+	
+	printf("Enter the age:");
+	scanf("%d",&Age);
+	
+	printf("Enter your gender(m/f):");
+	scanf(" %c",&gender);
+	
+	married(Age,num,gender);
+	
+	if(num==1)
 	{
-        printf("Both are eligible to marry.\n");
-    } 
-	else if (maleage >= 21) 
+	 printf("Eligibal");	
+	}
+	if(num==2)
 	{
-        printf("only male is eligible to marry.\n");
-    } 
-	else if (femaleage >= 18) 
+	 printf(" NOT Eligibal");	
+	}
+	if(num==3)
 	{
-        printf("only female is eligible to marry.\n");
-    } 	
-	else 
+	 printf("Eligibal");	
+	}
+	if(num==4)
 	{
-        printf("Both are are not eligible to marry.\n");
-    }
-    return 0;
-
+	 printf(" NOT Eligibal");
+	}
+	
+	return 0;
 }
+
+int married(int& Age, int& num, char& gender)
+{
+	if(gender=='m')
+	{
+		if(Age>=21)
+		{
+		  num=1; //printf("Eligibal");
+		}
+		else
+		{
+		   num=2;//	printf("Not Eligibal");
+		}
+	}
+	if(gender=='f')
+	{
+		if(Age>=18)
+		{
+		  num=4;	//printf("Eligibal");
+		}
+		else
+		{
+		  num=5;	//printf("Not Eligibal");
+		}
+	}
+}
+
+
+
+
+
+
 
