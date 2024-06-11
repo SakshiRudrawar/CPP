@@ -1,47 +1,84 @@
 #include<stdio.h>
 #include<string.h>
 
-typedef struct HR
+struct HR
 {
 	int id;
 	char name[20];
 	double salary;
 	double commission;
-}HR;
+	
+	void display()
+	{
+		printf("%d is %s his salary is %.2lf  and commission is %.2lf \n", this->id, this->name , this ->salary, this ->commission );
+	}
+	
+	void setid(int a)
+	{
+	    this -> id = a;	
+	}
+	
+	void setname(char* nm)
+	{
+		strcpy(this -> name, nm);
+	}
+	
+	double setsalary(double m)
+	{
+		this -> salary = m;
+	}
+	
+	double setcommission(float al)
+	{
+		this ->commission  = al;
+	}
+	// get 
+	
+	int getroll()
+	{
+		return this -> id;
+	}
+	
+	char* getname()
+	{
+		return this -> name;
+	}
+	
+	double getsalary(double m)
+	{
+	  return this -> salary;
+	}
+	
+	double getcommissions(double al) 
+	{
+	   return this -> commission;	
+	}
+};
 
 int main()
 {
-	int i;
+	HR h1;
 	
-	 HR arr[3];
+	h1.id =10;
+	strcpy(h1.name , "sachin");
+	h1.salary = 8000;
+	h1.commission = 1000;
 	
-	for(i=0; i<3; i++)
-	{
-		printf("enter the id");
-		scanf("%d", &arr[i].id);
-		
-		printf("enter the name");
-		scanf("%s", &arr[i].name);
-		
-		printf("enter the salary");
-		scanf("%lf", &arr[i].salary);
-		
-		printf("enter the commissions");
-		scanf("%lf", &arr[i].commission);
-		
-		
-	}
-	
-	for(i=0;i<3;i++)
-	{
-		printf("HR id is :%d\n  name: %s\n  salary:%lf\n  allowance:%lf\n" , arr[i].id, arr[i].name, arr[i].salary, arr[i].commission);
-	}
-	return 0;
+	h1.display();	
 }
 
 
 
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
