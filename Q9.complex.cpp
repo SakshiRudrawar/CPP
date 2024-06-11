@@ -1,28 +1,54 @@
 #include <stdio.h>
 
-typedef struct complex {
+struct complex 
+{
     double real;
     double imaginary;
-}complex;
-
-int main() 
-{
-    int i;
-
-     complex arr[3];
-
-    for (i = 0; i < 3; i++) {
-        printf("Enter the real number: ");
-        scanf("%lf", &arr[i].real);
-
-        printf("Enter the imaginary number: ");
-        scanf("%lf", &arr[i].imaginary);
-    }
-
-    for (i = 0; i < 3; i++) 
+    
+    void display()
 	{
-        printf("Complex number: %lf + %lf\n", arr[i].real, arr[i].imaginary);
-    }
-    return 0;
+		printf(" real : %.2lf  & imaginary : %.2lf ", this->real, this->imaginary);
+	}
+	
+	void setreal(double a)
+	{
+	    this -> real = a;	
+	}
+			
+	void setimaginary(double b)
+	{
+	    this -> imaginary = b;	
+	}
+	
+	// get 
+	
+	int getreal()
+	{
+		return this -> real;
+	}
+	
+	int getimaginary()
+	{
+		return this -> imaginary;
+	}
+	
+	
+};
 
+int main()
+{
+	complex c1;
+	
+	c1.real =5;
+	c1.imaginary =10;
+		
+	c1.display();	
 }
+
+
+
+	
+	
+	
+	
+
