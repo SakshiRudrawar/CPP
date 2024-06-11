@@ -1,36 +1,65 @@
 #include<stdio.h>
 #include<string.h>
 
-typedef struct distance
+struct distance
 {
 	int feet;
 	int inch;
 	
-}distance;
+	
+   void display()
+	{
+		printf(" feet : %d  & inch: %d", this->feet, this->inch);
+	}
+	
+	void setfeet(int a)
+	{
+	    this -> feet = a;	
+	}
+			
+	void setinch(int b)
+	{
+	    this -> inch = b;	
+	}
+	
+	// get 
+	
+	int getfeet()
+	{
+		return this -> feet;
+	}
+	
+	int getinch()
+	{
+		return this -> inch;
+	}
+	
+	
+};
 
 int main()
 {
-	int i;
+	distance d1;
 	
-	 distance arr[3];
-	
-	for(i=0; i<3; i++)
-	{
-		printf("enter the feet");
-		scanf("%d", &arr[i].feet);
+	d1.feet =5;
+	d1.inch =10;
 		
-		printf("enter the inch");
-		scanf("%s", &arr[i].inch);
-
-		
-	}
-	
-	for(i=0;i<3;i++)
-	{
-		printf("distance : feet:%d\n  inch:%d\n  " , arr[i].feet, arr[i].inch );
-	}
-	return 0;
+	d1.display();	
 }
+
+
+
+	
+	
+	
+	
+
+
+
+
+
+
+
 
 
 
