@@ -1,56 +1,81 @@
 #include<stdio.h>
 #include<string.h>
 
-typedef struct product
+struct product
 {
 	int id;
 	char name[20];
 	int quantity;
 	double price;
 	
-} product;
+	
+	void display()
+	{
+		printf(" id : %d  name: %s  quality:  %d  and  price : %.2lf \n", this->id, this->name , this ->quantity, this ->price );
+	}
+	
+	void setid(int a)
+	{
+	    this -> id = a;	
+	}
+	
+	void setname(char* nm)
+	{
+		strcpy(this -> name, nm);
+	}
+	
+	void setquantity(int q)
+	{
+		this -> quantity = q;
+	}
+	
+	void setprice(double p)
+	{
+		this -> price = p;
+	}
+	// get 
+	
+	int getid()
+	{
+		return this -> id;
+	}
+	
+	char* getname()
+	{
+		return this -> name;
+	}
+	
+	int  getquantity(int q)
+	{
+	  return this -> quantity;
+	}
+	
+	double getprice(double p) 
+	{
+	   return this -> price;	
+	}
+};
 
 int main()
 {
-	int i;
+	product p1;
 	
-	struct product arr[3];
+	p1.id =10;
+	strcpy(p1.name , "sachin");
+	p1.quantity = 6;
+	p1.price = 1000;
 	
-	for(i=0; i<3; i++)
-	{
-		printf("enter the id");
-		scanf("%d", &arr[i].id);
-		
-		printf("enter the name");
-		scanf("%s", arr[i].name);
-		
-		printf("enter the quantity");
-		scanf("%d", &arr[i].quantity);
-		
-		printf("enter the price");
-		scanf("%ld", &arr[i].price);
-		
-			 
-	}
-	
-	for(i=0;i<3;i++)
-	{
-		printf("product details : \n product id is :%d\n  name:%s\n  quantity:%d\n price:%ld\n " , arr[i].id, arr[i].name, arr[i].quantity, arr[i].price );
-	}
-	return 0;
+	p1.display();	
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
