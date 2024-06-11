@@ -1,37 +1,71 @@
+#include<stdio.h>
+#include<string.h>
 
-#include <stdio.h>
-#include <string.h>
-
-typedef struct student
+struct student
 {
-    int roll_no;
-    char name[20];
-    double marks;
-} Student;  
+	int roll;
+	char name[20];
+	double marks;
+	
+	void display()
+	{
+		printf("%d is %s and marks are %.2lf \n", this->roll, this->name , this ->marks);
+	}
+	
+	void setroll(int a)
+	{
+		this -> roll = a;
+	}
+	
+	void setname(char* nm)
+	{
+		strcpy(this -> name, nm);
+	}
+	
+	double setmarks(double m)
+	{
+		this -> marks = m;
+	}
+	//get 
+	
+	int getroll()
+	{
+		return this -> roll;
+	}
+	
+	char* getname()
+	{
+		return this -> name;
+	}
+	
+	double getmarks(double m)
+	{
+	  return this -> marks;
+	}	
+	
+};
 
 int main()
 {
-    int i;
-
-    Student arr[3];
-
-    for (i = 0; i < 3; i++)
-    {
-        printf("Enter the roll number: ");
-        scanf("%d", &arr[i].roll_no);
-
-        printf("Enter the name: ");
-        scanf("%s", arr[i].name);
-
-        printf("Enter the marks: ");
-        scanf("%lf", &arr[i].marks);
-    }
-
-    for (i = 0; i < 3; i++)
-    {
-        printf("Student Roll No: %d\n  Name: %s\n  Marks: %lf\n", arr[i].roll_no, arr[i].name, arr[i].marks);
-    }
-
-    return 0;
+	
+	student s1, s2;
+	
+	s1.roll =10;
+	strcpy(s1.name , "sachin");
+	s1.marks = 80.80;
+	
+	s2.roll=20;
+	strcpy(s2.name , "sakshi");
+	s2.marks =80.00;
+	
+	s1.display();
+	s2.display();
 }
+
+
+
+
+
+
+
 
