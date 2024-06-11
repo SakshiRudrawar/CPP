@@ -1,37 +1,58 @@
 #include<stdio.h>
 #include<string.h>
 
-typedef struct date
+struct date
 {
 	int date;
 	char month[20];
 	int  year;
-}date;
+	
+	void display()
+	{
+		printf("  %d/%s/%d \n", this->date, this->month , this ->year);
+	}
+	
+	void setdate(int a)
+	{
+	    this -> date = a;	
+	}
+	
+	void setmonth(char* mn)
+	{
+		strcpy(this -> month, mn);
+	}
+	
+	double setyear(int y)
+	{
+		this -> year = y;
+	}
+	
+	int getdate()
+	{
+		return this -> date;
+	}
+	
+	char* getmonth()
+	{
+		return this -> month;
+	}
+	
+	int getyear()
+	{
+	  return this -> year;
+	}	
+	
+};
 
 int main()
 {
-	int i;
+	date d1;
 	
-	date arr[3];
+	d1.date = 04;
+	strcpy(d1.month , "march");
+	d1.year = 2002;
 	
-	for(i=0; i<3; i++)
-	{
-		printf("enter the date");
-		scanf("%d", &arr[i].date);
-		
-		printf("enter the month");
-		scanf("%s", &arr[i].month);
-		
-		printf("enter the year");
-		scanf("%d", &arr[i].year);		
-		
-	}
-	
-	for(i=0;i<3;i++)
-	{
-		printf("current date is :%d/%s/%d \n" , arr[i].date, arr[i].month, arr[i].year );
-	}
-	return 0;
+	d1.display();	
 }
 
 
