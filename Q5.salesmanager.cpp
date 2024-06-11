@@ -1,54 +1,92 @@
 #include<stdio.h>
 #include<string.h>
 
-typedef struct salesManager
+struct salesmanager
 {
 	int id;
 	char name[20];
 	double salary;
 	double incentive;
 	char target[70];
-}salesManager;
+	
+    void display()
+	{
+		printf("%d is %s his salary is %.2lf  , commission is %.2lf  & target is %s \n", this->id, this->name , this ->salary, this ->incentive , this -> target );
+	}
+	
+	void setid(int a)
+	{
+	    this -> id = a;	
+	}
+	
+	void setname(char* nm)
+	{
+		strcpy(this -> name, nm);
+	}
+	
+	void setsalary(double m)
+	{
+		this -> salary = m;
+	}
+	
+	void setincentive(float al)
+	{
+		this ->incentive  = al;
+	}
+	
+	void settarget(char* t )
+	{
+		strcpy(this ->target , t);
+	}
+	
+	// get 
+	
+	int getroll()
+	{
+		return this -> id;
+	}
+	
+	char* getname()
+	{
+		return this -> name;
+	}
+	
+	double getsalary(double m)
+	{
+	  return this -> salary;
+	}
+	
+	double getincentive(double al) 
+	{
+	   return this -> incentive;	
+	}
+	
+	char* gettarget()
+	{
+		return this -> target;
+	}
+};
 
 int main()
 {
-	int i;
+	salesmanager s1;
 	
-	salesManager arr[3];
+	s1.id =10;
+	strcpy(s1.name , "sachin");
+	s1.salary = 8000;
+	s1.incentive = 1000;
+	strcpy(s1.target , "15 days");
 	
-	for(i=0; i<3; i++)
-	{
-		printf("enter the id");
-		scanf("%d", &arr[i].id);
-		
-		printf("enter the name");
-		scanf("%s", &arr[i].name);
-		
-		printf("enter the salary");
-		scanf("%lf", &arr[i].salary);
-		
-		printf("enter the incentive");
-		scanf("%lf", &arr[i].incentive);
-		
-		printf("enter the target");
-		scanf("%s",&arr[i].target);
-		
-		
-	}
 	
-	for(i=0;i<3;i++)
-	{
-		printf("salesman id is :%d\n  name: %s\n  salary:%lf\n  allowance:%lf\n  target:%s\n" , arr[i].id, arr[i].name, arr[i].salary, arr[i].incentive, arr[i].target );
-	}
-	return 0;
+	s1.display();	
 }
 
 
 
-
-
-
-
+	
+	
+	
+	
 
 
 
